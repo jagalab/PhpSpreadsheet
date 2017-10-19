@@ -19,7 +19,7 @@ class Html extends BaseReader implements IReader
     /**
      * Sample size to read to determine if it's HTML or not.
      */
-    const TEST_SAMPLE_SIZE = 2048;
+    const TEST_SAMPLE_SIZE = 2048; // ~jagalab : lower the sample size, so can read small html
 
     /**
      * Input encoding.
@@ -522,7 +522,7 @@ class Html extends BaseReader implements IReader
         //    Create a new DOM object
         $dom = new DOMDocument();
         //    Reload the HTML file into the DOM object
-        $loaded = $dom->loadHTML(mb_convert_encoding($this->securityScanFile($pFilename), 'HTML-ENTITIES', 'UTF-8'));
+        $loaded = $dom->loadHTML(mb_convert_encoding($this->securityScanFile($pFilename), 'HTML-ENTITIES', 'UTF-8')); //  ~jagalab : suppress error, usefull if html contains special 
         if ($loaded === false) {
             throw new Exception('Failed to load ' . $pFilename . ' as a DOM Document');
         }
