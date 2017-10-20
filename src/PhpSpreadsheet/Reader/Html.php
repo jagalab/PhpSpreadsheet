@@ -19,7 +19,7 @@ class Html extends BaseReader implements IReader
     /**
      * Sample size to read to determine if it's HTML or not.
      */
-    const TEST_SAMPLE_SIZE = 2048; // ~jagalab : lower the sample size, so can read small html
+    const TEST_SAMPLE_SIZE = 512; // ~jagalab : lower the sample size, so can read small html
 
     /**
      * Input encoding.
